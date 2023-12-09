@@ -16,6 +16,7 @@ function encrypt() {
     document.getElementById('encrypted').textContent = encryptedText;
     displayFullAlphabet(key);
 }
+
 function decrypt() {
     const encryptedText = document.getElementById('plaintext').value.toUpperCase();
     const key = parseInt(document.getElementById('key').value);
