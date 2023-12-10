@@ -36,48 +36,85 @@
     letter-spacing: 3px; /* You can adjust the value to control the spacing */
 }
 
+        /* Additional CSS styles if needed */
+        .result-section {
+            margin-top: 20px;
+        }
+
+     
+        .action-btn {
+            width: 150px; /* Adjust the width as needed */
+            margin-right: 5px; /* Add margin between buttons */
+        }
+        
+       /* Adjust layout for smaller screens */
+       @media (max-width: 576px) {
+            .action-btn {
+                width: auto; /* Auto width on smaller screens */
+                margin-right: 0; /* Remove right margin on smaller screens */
+                margin-bottom: 5px; /* Add margin between buttons vertically on smaller screens */
+            }
+
+            .btn-group {
+                flex-direction: row; /* Keep buttons in the same row on smaller screens */
+            }
+        }
+        .action-btn {
+            width: 150px; /* Adjust the width as needed */
+            margin-right: 5px; /* Add margin between buttons */
+        }
+
     </style>
     </style>
 </head>
 
 <body>
 
-    <div class="container">
-        <h1 class="mb-4">Monoalphabetic Cipher</h1>
+    <div class="container mt-4">
+        <h1 class="mb-4 text-center">Monoalphabetic Cipher</h1>
 
         <div class="form-group">
-            <label for="plaintext">Enter Text:</label>
-            <input type="text" class="form-control" id="plaintext" placeholder="Enter text to encrypt/decrypt">
+            <label for="plaintext">Text:</label>
+            <input type="text" class="form-control" id="plaintext" placeholder="Enter text">
         </div>
-
+    
         <div class="form-group">
-            <label for="key">Enter Shift Key:</label>
-            <input type="number" class="form-control" id="key" placeholder="Enter shift key">
+            <label for="key">Key:</label>
+            <input type="number" class="form-control" id="key" placeholder="Enter key">
         </div>
-
-        <button class="btn btn-primary mr-2" onclick="encrypt()">Encrypt</button>
-        <button class="btn btn-primary" onclick="decrypt()">Decrypt</button>
-
-        <button class="btn btn-primary" onclick="generateRandomKey()">Generate Random Key</button>
-
-
-        <div class="mt-3">
-            <p><strong>Encrypted Text:</strong> <span id="encrypted" class="letter-spacing"></span></p>
-            <p><strong>Decrypted Text:</strong> <span id="decrypted" class="letter-spacing"></span></p>
+    
+       
+            <button class="btn btn-primary flex-fill action-btn" onclick="encrypt()">Encrypt</button>
+            <button class="btn btn-primary flex-fill action-btn" onclick="decrypt()">Decrypt</button>
+     
+        <button class="btn btn-primary action-btn" onclick="generateRandomKey()">Random Key</button>
+    
+        <div id="result-container" class="result-section">
+            <div id="encrypted-result" style="display: none;">
+                <p class="text-center">Encrypted Text:</p>
+                <p id="encrypted" class="text-center"></p>
+            </div>
+            <div id="decrypted-result" style="display: none;">
+                <p class="text-center">Decrypted Text:</p>
+                <p id="decrypted" class="text-center"></p>
+            </div>
         </div>
         
-        <div class="mt-4">
-            <p><strong>Full Alphabet with Key:</strong></p>
-            <p id="fullAlphabet" class="letter-spacing"></p>
+        <div class="result-section">
+            <p class="text-center"><strong>Full Alphabet with Key:</strong></p>
+            <p id="fullAlphabet" class="letter-spacing text-center"></p>
         </div>
-        <div class="mt-4">
-            <h5>Number to Alphabet Mapping:</h5>
-            <pre>
+        <div class="result-section">
+            <h5 class="text-center">Number to Alphabet Mapping:</h5>
+            <pre class="text-center">
               1   2   3   4   5   6   7   8   9   10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26
               A   B   C   D   E   F   G   H   I   J   K   L   M   N   O   P   Q   R   S   T   U   V   W   X   Y   Z
             </pre>
         </div>
     </div>
+
+
+ 
     <div class="container">
         <div id="explanationNotes" class="mt-4">
             <h5>Working</h5>

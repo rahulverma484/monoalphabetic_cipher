@@ -14,6 +14,9 @@ function encrypt() {
     }
 
     document.getElementById('encrypted').textContent = encryptedText;
+    document.getElementById('result-container').style.display = 'block';
+    document.getElementById('encrypted-result').style.display = 'block';
+    document.getElementById('decrypted-result').style.display = 'none';
     displayFullAlphabet(key);
 }
 
@@ -33,9 +36,11 @@ function decrypt() {
     }
 
     document.getElementById('decrypted').textContent = decryptedText;
+    document.getElementById('result-container').style.display = 'block';
+    document.getElementById('encrypted-result').style.display = 'none';
+    document.getElementById('decrypted-result').style.display = 'block';
     displayFullAlphabet(key);
 }
-
 
 
 
